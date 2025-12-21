@@ -1,0 +1,101 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  
+  "name": "Agentic Workflow Configuration",
+  "description": "Settings for AI-assisted development with epistemic guardrails and memory persistence",
+  "version": "1.0.0",
+  "author": "Julien GELEE",
+  
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 ~/.ai_memory/session_init.py --quick",
+        "description": "Load persistent memory context at session start",
+        "timeout": 5000,
+        "optional": true
+      }
+    ],
+    "PreResponse": [
+      {
+        "type": "reminder",
+        "message": "Remember to follow CLAUDE.md protocols: check context, create TODO/plan for substantial work, provide checkpoints.",
+        "conditions": {
+          "messageLength": "> 500"
+        }
+      }
+    ],
+    "PostError": [
+      {
+        "type": "command",
+        "command": "python3 -c \"from memory_manager import find_similar_error; import sys; print(find_similar_error(sys.argv[1]))\" \"${error_message}\"",
+        "description": "Check memory for known solutions to this error",
+        "optional": true
+      }
+    ]
+  },
+  
+  "skills": [
+    {
+      "name": "epistemic-cognitive-guardrails",
+      "path": ".claude/skills/epistemic-cognitive-guardrails",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "memory-persistence",
+      "path": ".claude/skills/memory-persistence",
+      "enabled": true,
+      "priority": 2
+    }
+  ],
+  
+  "context": {
+    "includeFiles": [
+      "CLAUDE.md",
+      "README.md",
+      "docs/ARCHITECTURE.md"
+    ],
+    "excludePatterns": [
+      "node_modules/**",
+      ".git/**",
+      "dist/**",
+      "*.log",
+      ".env*"
+    ],
+    "maxFileSize": "100KB"
+  },
+  
+  "behavior": {
+    "requireTodoBeforeWork": true,
+    "checkpointFrequency": "after-deliverable",
+    "securityChecks": {
+      "blockCredentials": true,
+      "warnOnSensitiveFiles": true
+    },
+    "documentationStyle": {
+      "language": "bilingual-en-fr",
+      "format": "scholar",
+      "signature": true
+    }
+  },
+  
+  "memory": {
+    "enabled": true,
+    "backend": "auto",
+    "initScript": "~/.ai_memory/session_init.py",
+    "autoLog": {
+      "actions": true,
+      "errors": true,
+      "checkpoints": true
+    }
+  },
+  
+  "aliases": {
+    "checkpoint": "Provide a structured checkpoint with Done, In Progress, TODO, and Global Objective sections.",
+    "plan": "Create a TODO/Plan with clear steps, dependencies, and vigilance points before starting work.",
+    "reread": "Reread the initial request and full conversation context before responding.",
+    "memory-search": "Search persistent memory for relevant past context: ${query}",
+    "error-check": "Check if this error has been solved before: ${error_message}"
+  }
+}
